@@ -1,0 +1,15 @@
+/* Design tokens: the single source of truth (CLAUDE.md §7, §9).
+ *
+ * Tailwind 4 reads this @theme block and generates utilities from it:
+ *   --color-*  -> bg-*, text-*, border-*      --font-*     -> font-*
+ *   --text-*   -> text-* (sizes)              --spacing-*  -> p-*, m-*, gap-*
+ *   --radius-* -> rounded-*                   --tracking-*, --leading-*
+ *
+ * Values arrive in build-order step 3, extracted from the Eucharist page.
+ *
+ * Dark mode with zero JS: put raw values on :root, swap them under
+ * @media (prefers-color-scheme: dark), and expose them with `@theme inline`
+ * so utilities read the swapped variable rather than a frozen copy.
+ */
+@theme {
+}

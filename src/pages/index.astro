@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const concepts = await getCollection('concepts');
+---
+
+<Base
+  title="Catholic typology, with sources"
+  description="Each Catholic belief traced backwards: Old Testament type, New Testament fulfilment, patristic witness, magisterial definition, present practice."
+>
+  <main>
+    <h1>Catholic typology, with sources</h1>
+    <p>
+      Each page traces one Catholic belief backwards: Old Testament type, New Testament fulfilment,
+      patristic witness, magisterial definition, present practice.
+    </p>
+    <ul>
+      {concepts.map((c) => <li><a href={`/concepts/${c.id}/`}>{c.data.title}</a></li>)}
+    </ul>
+  </main>
+</Base>

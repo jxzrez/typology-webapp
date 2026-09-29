@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+  <body>
+    <slot />
+    <footer>
+      <p>
+        A private lay project. Not an official publication of the Archdiocese of Singapore or of
+        any ecclesiastical authority. Where this site and the Catechism differ, the Catechism is
+        right.
+      </p>
+      <p>
+        Scripture quotations are from The Catholic Edition of the Revised Standard Version of the
+        Bible, copyright © 1965, 1966 National Council of the Churches of Christ in the United
+        States of America. Used by permission. All rights reserved worldwide.
+      </p>
+      <p>
+        Excerpts from the English translation of the Catechism of the Catholic Church for use in
+        the United States of America Copyright © 1994, United States Catholic Conference, Inc. —
+        Libreria Editrice Vaticana. Used with Permission.
+      </p>
+    </footer>
+  </body>
+</html>

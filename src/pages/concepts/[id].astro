@@ -1,0 +1,62 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('concepts');
+  return entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+interface Props {
+  entry: CollectionEntry<'concepts'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, summary, audience_level, claims, further_reading, status } = entry.data;
+---
+
+<Base title={title} description={summary}>
+  <main>
+    <h1>{title}</h1>
+    <p>{summary}</p>
+    <p>Level {audience_level}. Status: {status}.</p>
+
+    <Content />
+
+    <h2>Claims and sources</h2>
+    <ol>
+      {
+        claims.map((claim) => (
+          <li>
+            {claim.text}
+            <ul>
+              {claim.sources.map((s) => (
+                <li>
+                  {s.type}: {s.url ? <a href={s.url}>{s.ref}</a> : s.ref}
+                  {s.work && <> ({s.work})</>}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ol>
+
+    {
+      further_reading && (
+        <>
+          <h2>Further reading</h2>
+          <ul>
+            {further_reading.map((f) => (
+              <li>
+                {f.title}, {f.author}
+                {f.note && <>. {f.note}</>}
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    }
+  </main>
+</Base>
