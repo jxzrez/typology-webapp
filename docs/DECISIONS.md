@@ -53,3 +53,9 @@ Append-only. Date, what was decided, why. Newest at the bottom.
   one-line collection filter to add when the owner wants it.
 - **Skills:** `frontend-design` and `context7` installed at user scope from the official
   marketplace; `citation-integrity` and `minimal-diff` written locally under `.claude/skills/`.
+- **Pages project name `traced-back`.** Short, meaningful (CLAUDE.md §1: "trace the belief
+  backwards"), no denominational claim in the URL. Probed unclaimed on 2026-09-29: claimed
+  pages.dev names answer HTTP 522 or 200, unclaimed ones do not resolve; every candidate tried
+  (`traced-back`, `typology-sg`, `catholic-typology`, `typologia`) did not resolve.
+- **Repo public under MIT** (owner's choice at repo creation). MIT applies to code and our own
+  prose. Quoted RSV-CE and CCC text stays under its owners' copyright and quotation policies.

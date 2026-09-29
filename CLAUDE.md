@@ -298,9 +298,10 @@ Resolved 2026-09-29 (reasons in `docs/DECISIONS.md`):
   `mass_times_checked` date. catholic.sg blocks bots; MyCatholicSG has no public API.
 - No comments, contact form, or newsletter.
 
-Still open — ask before it blocks:
-
-- [ ] The `pages.dev` project name. It is permanent once created.
+- Pages project name: `traced-back` (from "trace the belief backwards"). `site` in `astro.config.mjs`
+  is `https://traced-back.pages.dev`. Change both together if the dashboard rejects the name.
+- Repo: `github.com/jxzrez/typology-webapp`, public, MIT. Note MIT covers our code and prose;
+  quoted RSV-CE and CCC excerpts remain their owners' and are used under the policies in §3.
 
 ---
 

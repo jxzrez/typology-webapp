@@ -7,6 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://traced-back.pages.dev',
   integrations: [mdx()],
   compressHTML: true,
 
